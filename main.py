@@ -14,15 +14,63 @@ class MainHandler(webapp2.RequestHandler):
         template = env.get_template("templates/start.html")
         self.response.write(template.render())
 
+
+# First options
+
 class RunHandler(webapp2.RequestHandler):
     def get(self):
         template = env.get_template("templates/run.html")
         self.response.write(template.render())
 
+# options after run
+
+class FasterHandler(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("templates/faster.html")
+        self.response.write(template.render())
+
+class OstrichHandler(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("templates")
+
+
+
+# ----------------------
+
+
 class JumpHandler(webapp2.RequestHandler):
     def get(self):
         template = env.get_template("templates/jump.html")
         self.response.write(template.render())
+
+# options after jump
+
+
+
+
+
+# ----------------------
+class GriffinHandler(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("templates/griffin.html")
+        self.response.write(template.render())
+
+#options after griffin
+
+
+
+# -----------------------
+
+class CallHandler(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("templates/call.html")
+        self.response.write(template.render())
+
+#options after call
+
+
+
+
 
 
 
@@ -32,4 +80,6 @@ app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/run', RunHandler),
     ('/jump', JumpHandler),
+    ('/griffin', GriffinHandler)
+    ('/call', CallHandler)
 ], debug = True)
